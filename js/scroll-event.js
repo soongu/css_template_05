@@ -4,6 +4,11 @@
 function hideGoTop(scrollTop) {
     const $goTop = document.querySelector('.go-top');
 
+    /*
+        toggle함수의 2번째 인수로 논리값을 전달하면
+        true일 경우 클래스를 강제로 추가하고,
+        false일 경우 클래스를 강제로 제거한다.
+    */
     $goTop.classList.toggle('hide', scrollTop < 800);
 
     /*
@@ -49,6 +54,7 @@ function changeFixHeader(scrollTop) {
     });
 
 
+  
     //go-top 스크롤 부드럽게 처리
     document.querySelector('.go-top').addEventListener('click', e => {
         //jQuery animate함수: 애니메이션의 종류나 속도 지정
@@ -56,5 +62,7 @@ function changeFixHeader(scrollTop) {
             scrollTop: 0
         }, 1200);
     });
+
+  
 
 }());
